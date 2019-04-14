@@ -1,0 +1,13 @@
+version: '3'
+services:
+  recursion:
+    build:
+      context: .
+    links:
+      - dind:docker
+    depends_on:
+      - dind
+
+  dind:
+    image: docker:dind
+    privileged: true
